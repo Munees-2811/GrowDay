@@ -413,12 +413,14 @@ def main():
 
     inject_css()
 
-    # Top Navbar (Horizontal 5-tab bar matching bottom bar in screenshot)
-    current_page = render_navbar()
+    current_page = st.session_state.current_page
 
     # Render selected page
     renderer = PAGE_MAP.get(current_page, render_today_page)
     renderer()
+
+    # Bottom Navigation Bar
+    render_navbar()
 
 
 if __name__ == "__main__":
