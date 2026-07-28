@@ -1,4 +1,4 @@
-# Python
+# Byte-compiled / optimized files
 __pycache__/
 *.py[cod]
 *$py.class
@@ -14,23 +14,26 @@ env/
 .venv/
 .env/
 
-# IDE
+# Pytest / Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE & OS
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
-
-# OS
 .DS_Store
 Thumbs.db
 desktop.ini
 
-# Database
+# Database & Runtime
 data/*.db
+data/*.db-journal
+data/*.db-wal
 
 # Streamlit
 .streamlit/
-
-# Logs
 *.log
