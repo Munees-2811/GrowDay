@@ -19,13 +19,13 @@ from database.db import (
 def render_categories_page():
     """Render Categories page matching screenshot 4."""
     # Header
-    cols_hdr = st.columns([6, 1, 1])
+    cols_hdr = st.columns([6, 1, 1], vertical_alignment="center")
     with cols_hdr[0]:
         st.markdown("<h2 style='margin:0;font-weight:800;color:#FFF;'>Categories</h2>", unsafe_allow_html=True)
     with cols_hdr[1]:
-        st.markdown("<div style='text-align:right;font-size:1.2rem;color:#888;'>✓</div>", unsafe_allow_html=True)
+        st.button("✓", key="hdr_cat_check")
     with cols_hdr[2]:
-        st.markdown("<div style='text-align:right;font-size:1.2rem;color:#888;'>ℹ️</div>", unsafe_allow_html=True)
+        st.button("ℹ️", key="hdr_cat_info")
 
     st.markdown("<div style='height:1rem'></div>", unsafe_allow_html=True)
 

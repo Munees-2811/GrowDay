@@ -19,15 +19,15 @@ from database.db import add_timer_record, get_recent_timer_records
 def render_timer_page():
     """Render Timer page matching screenshot 5."""
     # Top header
-    cols_hdr = st.columns([6, 1, 1, 1])
+    cols_hdr = st.columns([6, 1, 1, 1], vertical_alignment="center")
     with cols_hdr[0]:
         st.markdown("<h2 style='margin:0;font-weight:800;color:#FFF;'>Timer</h2>", unsafe_allow_html=True)
     with cols_hdr[1]:
-        st.markdown("<div style='text-align:right;font-size:1.1rem;color:#888;'>ℹ️</div>", unsafe_allow_html=True)
+        st.button("ℹ️", key="hdr_timer_info")
     with cols_hdr[2]:
-        st.markdown("<div style='text-align:right;font-size:1.1rem;color:#888;'>📳</div>", unsafe_allow_html=True)
+        st.button("📳", key="hdr_timer_vibrate")
     with cols_hdr[3]:
-        st.markdown("<div style='text-align:right;font-size:1.1rem;color:#888;'>🔊</div>", unsafe_allow_html=True)
+        st.button("🔊", key="hdr_timer_volume")
 
     st.markdown("<div style='height:1.5rem'></div>", unsafe_allow_html=True)
 

@@ -202,15 +202,15 @@ def inject_css():
 def render_today_page():
     """Render Today page matching Screenshot 1."""
     # Top bar with Today title + Action icons (Search, Filter, Calendar, Settings)
-    cols_hdr = st.columns([5, 1, 1, 1, 1])
+    cols_hdr = st.columns([5, 1, 1, 1, 1], vertical_alignment="center")
     with cols_hdr[0]:
         st.markdown("<h2 style='margin:0;font-weight:800;color:#FFF;'>Today</h2>", unsafe_allow_html=True)
     with cols_hdr[1]:
-        st.markdown("<div style='text-align:right;font-size:1.2rem;color:#888;'>🔍</div>", unsafe_allow_html=True)
+        st.button("🔍", key="hdr_today_search")
     with cols_hdr[2]:
-        st.markdown("<div style='text-align:right;font-size:1.2rem;color:#888;'>⚡</div>", unsafe_allow_html=True)
+        st.button("⚡", key="hdr_today_quick")
     with cols_hdr[3]:
-        st.markdown("<div style='text-align:right;font-size:1.2rem;color:#888;'>📅</div>", unsafe_allow_html=True)
+        st.button("📅", key="hdr_today_cal")
     with cols_hdr[4]:
         if st.button("⚙️", key="settings_icon_btn"):
             st.session_state.current_page = "Settings"
@@ -360,7 +360,7 @@ def render_today_page():
 # =========================================================================
 def render_settings():
     """Settings page."""
-    cols_hdr = st.columns([6, 1])
+    cols_hdr = st.columns([6, 1], vertical_alignment="center")
     with cols_hdr[0]:
         st.markdown("<h2 style='margin:0;font-weight:800;color:#FFF;'>Settings</h2>", unsafe_allow_html=True)
     with cols_hdr[1]:

@@ -81,16 +81,16 @@ def _task_form(defaults=None, key_suffix="new"):
 
 def render_tasks_page():
     """Main entry point for Tasks page."""
-    # Top header with icon buttons like in screenshot
-    cols_hdr = st.columns([6, 1, 1, 1])
+    # Top header with icon buttons
+    cols_hdr = st.columns([6, 1, 1, 1], vertical_alignment="center")
     with cols_hdr[0]:
         st.markdown("<h2 style='margin:0;font-weight:800;color:#FFF;'>Tasks</h2>", unsafe_allow_html=True)
     with cols_hdr[1]:
-        st.markdown("<div style='text-align:right;font-size:1.2rem;color:#888;'>🔍</div>", unsafe_allow_html=True)
+        st.button("🔍", key="hdr_tasks_search")
     with cols_hdr[2]:
-        st.markdown("<div style='text-align:right;font-size:1.2rem;color:#888;'>⚡</div>", unsafe_allow_html=True)
+        st.button("⚡", key="hdr_tasks_quick")
     with cols_hdr[3]:
-        st.markdown("<div style='text-align:right;font-size:1.2rem;color:#888;'>📥</div>", unsafe_allow_html=True)
+        st.button("📥", key="hdr_tasks_inbox")
 
     st.markdown("<div style='height:0.5rem'></div>", unsafe_allow_html=True)
 
